@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Header from "./components/header";
+import Lines from "./components/Lines";
 
+const Button = styled.button`
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  background: #1e88e5;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  @media print {
+    display: none;
+  }
+`;
 function App() {
+  const [lines, setLines] = useState([<Lines />]);
+  const handleClick = () => setLines([...lines, <Lines />]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: `center` }}>
+      <Header />
+      <Button onClick={handleClick}>Add Lines</Button>
+      {lines}
     </div>
   );
 }
