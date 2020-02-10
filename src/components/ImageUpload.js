@@ -7,7 +7,6 @@ const Upload = styled.input`
 `;
 const ImageUpload = props => {
   const handleChange = e => {
-    console.log(e.target.files[0]);
     const file = e.target.files[0];
     const fileCompressed = URL.createObjectURL(file);
     props.setImage(fileCompressed);

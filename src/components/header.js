@@ -4,7 +4,6 @@ import ImageUpload from "./ImageUpload";
 
 const Image = styled.img`
   width: 75%;
-  /* height: 20vh; */
   margin: auto 0;
 `;
 const Header = () => {
