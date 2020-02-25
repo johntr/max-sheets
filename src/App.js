@@ -1,31 +1,27 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import Header from "./components/header";
-import Lines from "./components/Lines";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Picture from "./pages/picture";
+import Sentences from "./pages/sentences";
 
-const Button = styled.button`
-  margin: 0 auto;
-  border-radius: 0.25rem;
-  background: #1e88e5;
-  color: white;
-  font-size: 1rem;
-  line-height: 1.2;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  display: block;
-  @media print {
-    display: none;
-  }
-`;
-function App() {
-  const [lines, setLines] = useState([<Lines />]);
-  const handleClick = () => setLines([...lines, <Lines />]);
+function Home() {
   return (
-    <div style={{ textAlign: `center` }}>
-      <Header />
-      <Button onClick={handleClick}>Add Lines</Button>
-      {lines}
-    </div>
+    <ul>
+      <Link to="/picture">
+        <li>Picture</li>
+      </Link>
+      <Link to="/sentences">
+        <li>Sentences</li>
+      </Link>
+    </ul>
+  );
+}
+function App() {
+  return (
+    <Router>
+      <Route path="/picture" component={Picture} />
+      <Route path="/sentences" component={Sentences} />
+      <Route path="/" exact component={Home} />
+    </Router>
   );
 }
 
