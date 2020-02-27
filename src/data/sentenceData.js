@@ -10,7 +10,8 @@ const data = [
       ["Rode on a scooter", "danced", "did a warm up", "played ball"],
       ["shopped for a book", "read a book", "listened to a story"],
       ["used glue", "made a picture", "painted", "cut paper"],
-      ["played an instrument", "sang", "drummed"]
+      ["played an instrument", "sang", "drummed"],
+      ["fun", "not fun"]
     ]
   }
 ];
